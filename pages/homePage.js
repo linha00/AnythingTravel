@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet , Text , View, SafeAreaView } from 'react-native';
 import color from '../config/colors'
 
-import Country from 'C:\Users\gekshan\OneDrive - National University of Singapore\Desktop\AnythingTravel\components\Country.js';
+import Country from '../components/country';
 
 function HomePage() {
     return (
