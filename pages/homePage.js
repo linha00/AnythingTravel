@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet , Text , View, SafeAreaView } from 'react-native';
 import color from '../config/colors'
 
-import country from '../components/country';
+import Country from 'C:\Users\gekshan\OneDrive - National University of Singapore\Desktop\AnythingTravel\components\Country.js';
 
 function HomePage() {
     return (
@@ -14,8 +14,8 @@ function HomePage() {
                     Countries
                 </Text>
 
-                <View style={styles.country}>
-                    <country/>
+                <View style={styles.Country}>
+                    <Country/>
                 </View>
             </View>
 

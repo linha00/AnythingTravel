@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet , Text , View, FlatList , ScrollView} from 'react-native';
 import color from '../config/colors'
 
-import BuyButton from './buyButton';
+import selectButton from './selectButton';
 
-function country(props) {
+function Country(props) {
     const [items, setItem] = useState([
         {name: 'Brunei', image:"placeholder"},
         {name: 'Cambodia', image:"placeholder"},
@@ -33,11 +33,11 @@ function country(props) {
                         </Text>
 
                         <Text style={styles.gold}>
-                            {item.gold}g
+                            {item.gold}
                         </Text>
                     </View>
 
-                    <BuyButton text= "buy" onPress={() => buy("placeholder")} />
+                    <selectButton text= "select" onPress={() => buy("placeholder")} />
                 </View>
                 )}/>
         </View>        
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Shop;
+export default Country;
