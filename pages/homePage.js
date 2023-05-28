@@ -1,41 +1,86 @@
-import React, {useState} from 'react';
-import {Image, StyleSheet, View, SafeAreaView, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {useForm} from 'react-hook-form';
+import React from 'react';
+import { StyleSheet , Text , View, SafeAreaView } from 'react-native';
 import color from '../config/colors'
 
-import CustomInput from '../components/customInput'
-import CustomButton from '../components/customButton'
 import TaskBar from '../components/taskBar';
-
-    const press = () => {
-        Keyboard.dismiss();
-    };
+import SidePanelButton from '../components/sidePanelButton';
+import country from '../components/country';
 
 function HomePage() {
-    const navigation = useNavigation();
-    const [loading, setLoading] = useState(false);
-    const {control, handleSubmit, formState: {errors}} = useForm();
-    
     return (
-        <TouchableWithoutFeedback onPress={press}>
-            <SafeAreaView style={styles.container}>
-                <Text>Home page</Text>
-                <TaskBar/>
-            </SafeAreaView>
-        </TouchableWithoutFeedback>
         
-    );
+        <SafeAreaView style={styles.container}>
+
+            <View style={styles.container1}>
+        
+                <SidePanelButton/>
+
+                <View style={styles.texts}>
+                    <Text style={styles.totalgold}>Total Gold:</Text>
+                    <Text style={styles.gold}>200g</Text>
+                </View>
+            </View>
+
+            <View style={styles.container2}>
+                <Text style={styles.header}>
+                    Shop
+                </Text>
+
+                <View style={styles.shop}>
+                    <Shop/>
+                </View>
+            </View>
+            
+            <TaskBar style={styles.taskbar}/>
+
+        </SafeAreaView>
+    ); 
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'column', 
         alignItems: 'center',
         justifyContent: 'center',
     },
 
+    container1: {
+        flex: 1,
+        width: "100%",
+        flexDirection: 'row',
+        backgroundColor: color.secondary,
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        paddingLeft: 30,
+        paddingRight: 50,
+        paddingBottom: 20,
+        borderBottomLeftRadius: 40,
+        borderBottomRightRadius: 40,
+    },
+
+    container2: {
+        flex: 6,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        width: '100%',
+    },
+
+    header: {
+        fontSize: 35,
+        color: color.quaternary,
+        paddingTop: 30,
+    },
+
+    shop: {
+        width: '90%',
+        height: '85%',
+        backgroundColor: color.primary,
+        borderRadius: 20,
+        borderWidth: 1,
+        padding: 10,
+        margin: 15,
+    }
+
 })
 
-export default HomePage;
+export default ShopPage;
