@@ -41,8 +41,9 @@ function Shop(props) {
                             {item.gold}g
                         </Text>
                     </View>
-
+                    <View style = {styles.buy}>
                     <BuyButton text= "buy" onPress={() => buy("placeholder")} />
+                    </View>
                 </View>
                 )}/>
         </View>        
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
 
     box: {
         flexDirection: 'row',
-        width: "93%",
+        width: "100%",
         height: componentHeight + 20,
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -71,6 +72,15 @@ const styles = StyleSheet.create({
         width: componentWidth,
         height: componentHeight,
         backgroundColor: color.gold,
+        left: -10,
+    },
+
+    text: {
+        width: componentWidth,
+    },
+
+    buy: {
+        top: 20,
     },
 
     name: {
