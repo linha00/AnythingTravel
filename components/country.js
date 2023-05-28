@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet , Text , View, FlatList , ScrollView} from 'react-native';
 import color from '../config/colors'
 
-import selectButton from './selectButton';
+import SelectButton from './selectButton'
+import { useNavigation } from '@react-navigation/native';
+
 
 function Country(props) {
     const [items, setItem] = useState([
@@ -16,29 +18,33 @@ function Country(props) {
         {name: 'Thailand', image:"placeholder"},
     ]);
 
+    const navigation = useNavigation();
+
+    const goTo = country => () => {
+        navigation.navigate(`shop_${country}`);
+    };
 
     return (
         <View style={styles.container}>
             <FlatList
                 data={items}
                 renderItem={({item}) => (
-                <View style={styles.box} key={item.key}>
-                    <Text style={styles.image}>
-                        {item.image}
-                    </Text>
-
-                    <View style={styles.text}>
-                        <Text style={styles.name}>
-                            {item.name}
+                    <View style={styles.box} key={item.key}>
+                        <Text style={styles.image}>
+                            {item.image}
                         </Text>
+                        <View style={styles.text}>
+                            <Text style={styles.name}>
+                                {item.name}
+                            </Text>
 
-                        <Text style={styles.gold}>
-                            {item.gold}
-                        </Text>
+                            <Text style={styles.gold}>
+                                {item.gold}
+                            </Text>
+                        </View>
+
+                        <SelectButton text= "select" onPress={goTo(item.name)} />
                     </View>
-
-                    <selectButton text= "select" onPress={() => buy("placeholder")} />
-                </View>
                 )}/>
         </View>        
     ); 

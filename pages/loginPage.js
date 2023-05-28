@@ -13,7 +13,6 @@ import CustomButton from '../components/customButton'
 
 function LoginScreen() {
     const navigation = useNavigation();
-    const [loading, setLoading] = useState(false);
     const {control, handleSubmit, formState: {errors}} = useForm();
 
 
@@ -25,14 +24,10 @@ function LoginScreen() {
             "\nusername: " + username +
             "\nPassword: " + password
         );
-
-        if (loading) {
-            return;
-        }
-
-        setLoading(true);
+        
+        //navigate to homepage if login succuss else popup the error 
         try {
-            // const response = await Auth.signIn(username, password);
+            //auth with the server
             console.log(
                 "\nLogin successful" +
                 "\nusername: " + username 
@@ -41,8 +36,6 @@ function LoginScreen() {
         } catch(e) {
             Alert.alert('Oops', e.message);
         }
-
-        setLoading(false);
     };
 
     const forgotPressed = () => {
@@ -58,7 +51,6 @@ function LoginScreen() {
             <SafeAreaView style={styles.container}>
                 <Image style={styles.logo} 
                     source={require('../assets/logo.png')} />
-                
                 <CustomInput 
                     name = "username"
                     placeholder = "Username" 
@@ -82,7 +74,7 @@ function LoginScreen() {
                 </TouchableOpacity>
 
                 <CustomButton 
-                    text = {loading ? "Loading" : "Login"} 
+                    text = "Login"
                     onPress = {handleSubmit(loginPressed)}
                 />
 

@@ -6,7 +6,7 @@ import Shop from '../components/shop';
 import BackButton from '../components/backButton';
 import { useNavigation } from '@react-navigation/native';
 
-function ShopPage() {
+function CambodiaShopPage() {
     const navigation = useNavigation();
 
     const back = () => {
@@ -22,7 +22,7 @@ function ShopPage() {
 
             <View style={styles.container2}>
                 <Text style={styles.header}>
-                    Packages
+                    Cambodia
                 </Text>
 
                 <View style={styles.shop}>
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default ShopPage;
+export default CambodiaShopPage;
