@@ -10,12 +10,12 @@ const componentHeight = componentWidth * 1.5;
 
 function Shop(props) {
     const [items, setItem] = useState([
-        {name: 'NUS Dri-fit Shirt', image:"placeholder", gold: 1000, key: '1'},
-        {name: 'Starbucks gift Card', image:"placeholder", gold: 2500, key: '2'},
-        {name: 'Maxx Coffee', image:"placeholder", gold: 600, key: '3'},
-        {name: 'LiHo Milk Tea', image:"placeholder", gold: 500, key: '4'},
-        {name: 'test 1', image:"placeholder", gold: 2000, key: '5'},
-        {name: 'test 2', image:"placeholder", gold: 3000, key: '6'},
+        {name: 'NUS Dri-fit Shirt', image:"placeholder", price: 1000, key: '1'},
+        {name: 'Starbucks gift Card', image:"placeholder", price: 2500, key: '2'},
+        {name: 'Maxx Coffee', image:"placeholder", price: 600, key: '3'},
+        {name: 'LiHo Milk Tea', image:"placeholder", price: 500, key: '4'},
+        {name: 'test 1', image:"placeholder", price: 2000, key: '5'},
+        {name: 'test 2', image:"placeholder", price: 3000, key: '6'},
     ]);
 
     const buy = (name) => {
@@ -37,8 +37,12 @@ function Shop(props) {
                             {item.name}
                         </Text>
 
-                        <Text style={styles.gold}>
-                            {item.gold}g
+                        <Text style={styles.desc}>
+                            test
+                        </Text>
+
+                        <Text style={styles.price}>
+                            ${item.price}
                         </Text>
                     </View>
                     <View style = {styles.buy}>
@@ -76,7 +80,8 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        width: componentWidth,
+        width: componentWidth + 30,
+        top: 15,
     },
 
     buy: {
@@ -84,14 +89,15 @@ const styles = StyleSheet.create({
     },
 
     name: {
-        fontSize: 20,
-        top: 20,
+        fontSize: 14,
     },
 
-    gold: {
-        fontSize: 15,
-        top: 15,
-        color: color.gold,
+    price: {
+        fontSize: 12,
+    },
+
+    desc: {
+        fontSize: 11,
     },
 
 })

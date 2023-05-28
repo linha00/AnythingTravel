@@ -4,13 +4,20 @@ import color from '../config/colors'
 
 import Shop from '../components/shop';
 import BackButton from '../components/backButton';
+import { useNavigation } from '@react-navigation/native';
 
 function ShopPage() {
+    const navigation = useNavigation();
+
+    const back = () => {
+        navigation.goBack();
+    };
+
     return (
         
         <SafeAreaView style={styles.container}>
             <View style = {styles.back}>
-                <BackButton/>
+                <BackButton onPress={back}/>
             </View>
 
             <View style={styles.container2}>
@@ -33,14 +40,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        
     },
 
     container2: {
-        flex: 14,
+        flex: 9,
         justifyContent: 'flex-start',
         alignItems: 'center',
         width: '100%',
+        top: 10,
     },
 
     back: {
@@ -52,7 +59,6 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 35,
         color: color.quaternary,
-        paddingTop: 30,
     },
 
     shop: {
