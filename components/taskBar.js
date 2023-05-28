@@ -10,17 +10,9 @@ const TaskBar = () => {
         navigation.goBack();
         navigation.navigate('Home');
     }
-    const missions = () => {
+    const health = () => {
         navigation.goBack();
-        navigation.navigate('Mission');
-    }
-    const map = () => {
-        navigation.goBack();
-        navigation.navigate('Map');
-    }
-    const friends = () => {
-        navigation.goBack();
-        navigation.navigate('Friends');
+        navigation.navigate('Health');
     }
     const shop = () => {
         navigation.goBack();
@@ -33,24 +25,14 @@ const TaskBar = () => {
                 <Text style={styles.text}>Home</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={missions} style={styles.task}>
-                <Image style={styles.logo} source={require('../assets/missions.png')}/>
-                <Text style={styles.text}>Missions</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={map} style={styles.task}> 
-                <Image style={styles.logo} source={require('../assets/map.png')}/>
-                <Text style={styles.text}>Map</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={friends} style={styles.task}> 
-                <Image style={styles.logo} source={require('../assets/friends.png')}/>
-                <Text style={styles.text}>Friends</Text>
-            </TouchableOpacity>
-
             <TouchableOpacity onPress={shop} style={styles.task}> 
                 <Image style={styles.logo} source={require('../assets/shop.png')}/>
                 <Text style={styles.text}>Shop</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={health} style={styles.task}> 
+                <Image style={styles.logo} source={require('../assets/friends.png')}/>
+                <Text style={styles.text}>Health</Text>
             </TouchableOpacity>
         </View>
     );
