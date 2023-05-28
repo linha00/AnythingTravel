@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet , Text , View, FlatList , ScrollView} from 'react-native';
+import { StyleSheet , Text , View, FlatList , Dimensions } from 'react-native';
 import color from '../config/colors'
 
 import BuyButton from './buyButton';
+
+const windowWidth = Dimensions.get('window').width;
+const componentWidth = (windowWidth / 3) - 30;
+const componentHeight = componentWidth * 1.5;
 
 function Shop(props) {
     const [items, setItem] = useState([
@@ -37,8 +41,9 @@ function Shop(props) {
                             {item.gold}g
                         </Text>
                     </View>
-
+                    <View style = {styles.buy}>
                     <BuyButton text= "buy" onPress={() => buy("placeholder")} />
+                    </View>
                 </View>
                 )}/>
         </View>        
@@ -53,8 +58,8 @@ const styles = StyleSheet.create({
 
     box: {
         flexDirection: 'row',
-        width: "93%",
-        height: 170,
+        width: "100%",
+        height: componentHeight + 20,
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 20,
@@ -64,9 +69,18 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        width: 100,
-        height: 140,
+        width: componentWidth,
+        height: componentHeight,
         backgroundColor: color.gold,
+        left: -10,
+    },
+
+    text: {
+        width: componentWidth,
+    },
+
+    buy: {
+        top: 20,
     },
 
     name: {
