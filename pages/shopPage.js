@@ -2,36 +2,26 @@ import React from 'react';
 import { StyleSheet , Text , View, SafeAreaView } from 'react-native';
 import color from '../config/colors'
 
-import TaskBar from '../components/taskBar';
-import SidePanelButton from '../components/sidePanelButton';
 import Shop from '../components/shop';
+import BackButton from '../components/backButton';
 
 function ShopPage() {
     return (
         
         <SafeAreaView style={styles.container}>
-
-            <View style={styles.container1}>
-        
-                <SidePanelButton/>
-
-                <View style={styles.texts}>
-                    <Text style={styles.totalgold}>Total Gold:</Text>
-                    <Text style={styles.gold}>200g</Text>
-                </View>
+            <View style = {styles.back}>
+                <BackButton/>
             </View>
 
             <View style={styles.container2}>
                 <Text style={styles.header}>
-                    Shop
+                    Packages
                 </Text>
 
                 <View style={styles.shop}>
                     <Shop/>
                 </View>
             </View>
-            
-            <TaskBar style={styles.taskbar}/>
 
         </SafeAreaView>
     ); 
@@ -42,27 +32,21 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-
-    container1: {
-        flex: 1,
-        width: "100%",
-        flexDirection: 'row',
-        backgroundColor: color.secondary,
-        alignItems: 'flex-end',
-        justifyContent: 'flex-end',
-        paddingLeft: 30,
-        paddingRight: 50,
-        paddingBottom: 20,
-        borderBottomLeftRadius: 40,
-        borderBottomRightRadius: 40,
+        flexDirection: 'column',
+        
     },
 
     container2: {
-        flex: 6,
+        flex: 14,
         justifyContent: 'flex-start',
         alignItems: 'center',
         width: '100%',
+    },
+
+    back: {
+        flex: 1,
+        width: '100%',
+        height: '100%'
     },
 
     header: {
