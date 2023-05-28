@@ -6,7 +6,6 @@ const healthButton = ({onPress}) => {
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
-            <Image style={styles.angle} source={require('../assets/leftAngleBracket.png')}/>
             <Text style={styles.text}>
                 Health Guidelines
             </Text>
