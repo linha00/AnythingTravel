@@ -2,8 +2,6 @@ import React from 'react';
 import { StyleSheet , Text , View, SafeAreaView } from 'react-native';
 import color from '../config/colors'
 
-import TaskBar from '../components/taskBar';
-import SidePanelButton from '../components/sidePanelButton';
 import country from '../components/country';
 
 function HomePage() {
@@ -11,27 +9,16 @@ function HomePage() {
         
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.container1}>
-        
-                <SidePanelButton/>
-
-                <View style={styles.texts}>
-                    <Text style={styles.totalgold}>Total Gold:</Text>
-                    <Text style={styles.gold}>200g</Text>
-                </View>
-            </View>
-
             <View style={styles.container2}>
                 <Text style={styles.header}>
-                    Shop
+                    Countries
                 </Text>
 
-                <View style={styles.shop}>
-                    <Shop/>
+                <View style={styles.country}>
+                    <country/>
                 </View>
             </View>
-            
-            <TaskBar style={styles.taskbar}/>
+
 
         </SafeAreaView>
     ); 
@@ -83,4 +70,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default ShopPage;
+export default HomePage;
