@@ -5,17 +5,14 @@ import color from '../config/colors'
 import BuyButton from './buyButton';
 
 const windowWidth = Dimensions.get('window').width;
-const componentWidth = (windowWidth / 3) - 30;
+const componentWidth = (windowWidth / 4) - 20;
 const componentHeight = componentWidth * 1.5;
 
 function Shop(props) {
     const [items, setItem] = useState([
-        {name: 'NUS Dri-fit Shirt', image:"placeholder", price: 1000, key: '1'},
-        {name: 'Starbucks gift Card', image:"placeholder", price: 2500, key: '2'},
-        {name: 'Maxx Coffee', image:"placeholder", price: 600, key: '3'},
-        {name: 'LiHo Milk Tea', image:"placeholder", price: 500, key: '4'},
-        {name: 'test 1', image:"placeholder", price: 2000, key: '5'},
-        {name: 'test 2', image:"placeholder", price: 3000, key: '6'},
+        {name: 'Package 1', image:"placeholder", price: 1000, key: '1'},
+        {name: 'Package 2', image:"placeholder", price: 2500, key: '2'},
+        {name: 'Package 3', image:"placeholder", price: 600, key: '3'},
     ]);
 
     const buy = (name) => {
@@ -50,6 +47,8 @@ function Shop(props) {
                     </View>
                 </View>
                 )}/>
+                <Text> The Following Are The Health Guidelines.</Text>
+                <Text> ... </Text>
         </View>        
     ); 
 }
@@ -89,15 +88,15 @@ const styles = StyleSheet.create({
     },
 
     name: {
-        fontSize: 14,
+        fontSize: 16,
     },
 
     price: {
-        fontSize: 12,
+        fontSize: 14,
     },
 
     desc: {
-        fontSize: 11,
+        fontSize: 12,
     },
 
 })

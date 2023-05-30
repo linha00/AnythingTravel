@@ -23,13 +23,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    angle: {
-        width: 18,
-        height: 18,
-        marginTop: 2,
-        marginRight: 2,
-    },
-
     text: {
         fontSize: 20,
         color: color.tertiary,

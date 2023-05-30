@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet , Text , View, SafeAreaView } from 'react-native';
 import color from '../config/colors'
 
+import Shop from '../components/shop';
 import BackButton from '../components/backButton';
 import { useNavigation } from '@react-navigation/native';
-import Shop from '../components/shop';
 
-function BruneiShopPage() {
+function ChinaShopPage() {
     const navigation = useNavigation();
 
     const back = () => {
@@ -22,10 +22,10 @@ function BruneiShopPage() {
 
             <View style={styles.container2}>
                 <Text style={styles.header}>
-                    Brunei
+                    China
                 </Text>
 
-                <View style={styles.choice}>
+                <View style={styles.shop}>
                     <Shop/>
                 </View>
             </View>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         color: color.quaternary,
     },
 
-    choice: {
+    shop: {
         width: '90%',
         height: '85%',
         backgroundColor: color.primary,
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default BruneiShopPage;
+export default ChinaShopPage;

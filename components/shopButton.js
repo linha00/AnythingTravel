@@ -6,7 +6,6 @@ const shopButton = ({onPress}) => {
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
-            <Image style={styles.angle} source={require('../assets/leftAngleBracket.png')}/>
             <Text style={styles.text}>
                 Shop
             </Text>
@@ -22,13 +21,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-
-    angle: {
-        width: 18,
-        height: 18,
-        marginTop: 2,
-        marginRight: 2,
     },
 
     text: {

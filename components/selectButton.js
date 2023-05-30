@@ -2,12 +2,12 @@ import React from 'react';
 import { StyleSheet , TouchableOpacity , Text } from 'react-native';
 import color from '../config/colors'
 
-const SelectButton = ({text , onPress}) => {
+const selectButton = ({text , onPress}) => {
 
     return (
         <TouchableOpacity onPress={onPress} style={styles.container}> 
-            <Text style={styles.text}>{text}</Text>
-        </TouchableOpacity>
+            <Text style={styles.text}>{text}</Text> 
+        </TouchableOpacity> 
     );
 }
 
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default SelectButton;
+export default selectButton;
